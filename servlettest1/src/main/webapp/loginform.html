@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>로그인폼</h1>
+<!-- get - http  프로토콜 클라이언트가 서버로 전송 방식 정한 것 -->
+<!-- <form action="login"> -->
+<form action="login"  method="post">
+아이디<input type=text id="id" name="id"><br>
+암호 <input type="password" id="pw" name="pw"><br>
+수강과목(중복선택가능) :
+<select name="subject" multiple >
+<option value="자바"> java </option>
+<option value="react"> react </option>
+<option value="서블릿"> servlet </option>
+<option value="ai"> ai </option>
+</select>
+<Input type="submit" value="로그인">
+</form>
+</body>
+</html>

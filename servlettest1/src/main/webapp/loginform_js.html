@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('form').on('submit', function(){
+		//아이디 admin / administrator / administration 중 1개면 role=admin
+		let id = $("#id").val();
+		if(id == 'admin' || id == 'administrator' || id == 'administration'){
+			$('input:hidden').val('admin');
+		}
+		else{
+			$('input:hidden').val('user');
+		}
+		this.action="loginjs";
+		this.method="post";
+	});//on end
+});//ready end
+</script>
+</head>
+<body>
+<h1>로그인폼</h1>
+
+<form>
+아이디<input type=text id="id" name="id"><br>
+암호 <input type="password" id="pw" name="pw"><br>
+<input type=hidden name="role" >
+<Input type="submit" value="로그인">
+</form>
+</body>
+</html>
