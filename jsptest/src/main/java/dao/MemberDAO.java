@@ -103,6 +103,46 @@ public class MemberDAO {
 		return result;
 	}//updateMember end
 
+	// 수정메소드2
+	public int updateMember_jsp(MemberDTO dto){//memberid, pw~email
+		Connection con = null;
+		int result = 0; 
+		try {
+		Class.forName(DBInfo.driver);
+		con = DriverManager.getConnection(DBInfo.url, DBInfo.account, DBInfo.password);
+		//System.out.println("연결성공");
+
+		String sql = "update c_member "
+				+ " set name=?, email=? , phone = ?  "
+				+ " where memberid=? and pw=?";
+		PreparedStatement pt = con.prepareStatement(sql); 
+		pt.setString (1, dto.getName());
+		pt.setString(2, dto.getEmail());
+		pt.setString(3, dto.getPhone());
+		pt.setString(4, dto.getMemberid());
+		pt.setInt(5, dto.getPw());
+		result = pt.executeUpdate();
+		//System.out.println("회원가입행 갯수 = " +rowcount);//1
+		
+		//con.close();//파일close,소켓close
+		//System.out.println("연결해제성공");
+		}
+		catch(ClassNotFoundException e) {
+			System.out.println("드라이버 등록 여부를 확인하세요");
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();//파일close,소켓close
+			}catch(SQLException e) {}
+			System.out.println("연결해제성공");
+		}
+		return result;
+	}//updateMember end
+
+
+	
 	// 내정보조회메소드
 	public MemberDTO getMember(String memberid, int pw){
 		MemberDTO dto = null;
