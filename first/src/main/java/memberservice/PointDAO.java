@@ -1,7 +1,10 @@
 package memberservice;
 
+import org.springframework.stereotype.Repository;
+
+@Repository //pointDAO
 public class PointDAO {
- int point;
+	int point;
 
 public int getPoint() {
 	return point;

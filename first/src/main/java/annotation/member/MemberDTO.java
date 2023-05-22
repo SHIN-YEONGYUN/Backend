@@ -2,13 +2,12 @@ package annotation.member;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component //memberDTO 이름 . singleton(1개생성빈공유)
 public class MemberDTO {
-
 	String memberid, name;
 	int pw;
-	String phone,email,regtime;
-	
+	String phone, email, regtime;
+
 	MemberDTO(String memberid, int pw){
 		System.out.println("매개변수 있는 생성자 호출");
 		this.memberid = memberid;
@@ -53,4 +52,5 @@ public class MemberDTO {
 	public void setRegtime(String regtime) {
 		this.regtime = regtime;
 	}
+	
 }

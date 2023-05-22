@@ -1,11 +1,18 @@
 package memberservice;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class MemberDAO {
+	@Autowired
+	@Qualifier("dto")
 	MemberDTO dto ;
 	
-	public void setDto(MemberDTO dto) {
-		this.dto = dto;
-	}
+	//public void setDto(MemberDTO dto) {
+	//	this.dto = dto;
+	//}
 
 	public boolean selectMember() {
 		if(dto.getMemberid().equals("spring") && 

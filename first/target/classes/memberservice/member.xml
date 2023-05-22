@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-<bean id="dto" class="memberservice.MemberDTO" >
+<bean id="dto" class="annotation.memberservice.MemberDTO" >
 	<property name="memberid" value="spring" />
 	<property name="pw" value="1111" />
 	<property name="name" value="김길동" />
@@ -13,7 +15,7 @@
 </bean>
 
 
-<bean id="dto2" class="memberservice.MemberDTO" >
+<bean id="dto2" class="annotation.memberservice.MemberDTO" >
 	<property name="memberid" value="spring2" />
 	<property name="pw" value="2222" />
 	<property name="name" value="박길동" />
@@ -22,23 +24,8 @@
 	<property name="regtime" value="2013-01-19" />	
 </bean>
 
+<context:component-scan base-package="annotation.memberservice" />
 
-<bean id="memberdao" class="memberservice.MemberDAO"  >
- <property name="dto" ref="dto2" />
-</bean>
-
-<bean id="pointdao" class="memberservice.PointDAO" >
-	<property name="point" value="1000" />
-</bean>
-
-<!-- <bean id="service" class="memberservice.MemberJanService">
-	<property name="dao" ref="memberdao" />
-	<property name="dao2" ref="pointdao" />
-</bean> -->
-
- <bean id="service" class="memberservice.MemberBasicService">
-	<property name="dao" ref="memberdao" />
-</bean> 
 
 </beans>
 

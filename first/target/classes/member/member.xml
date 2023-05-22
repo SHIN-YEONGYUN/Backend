@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-           http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- MemerDTO dto = new MemberDTO(); scope="prototype"-->
+<bean id="dto" class="member.MemberDTO" >
+	<property name="memberid" value="spring" />
+	<property name="pw" value="1111" />
+	<property name="name" value="김길동" />
+	<property name="phone" value="01021213434" />
+	<property name="email" value="kim@kil.com" />
+	<property name="regtime" value="2023-05-19" />	
+</bean>
 
-	<bean id="dto" class="member.MemberDTO" scope="prototype">
+<!-- 
+<bean id="dto2" class="member.MemberDTO" >
+	<property name="memberid" value="spring2" />
+	<property name="pw" value="2222" />
+	<property name="name" value="박길동" />
+	<property name="phone" value="01056563434" />
+	<property name="email" value="park@kil.com" />
+	<property name="regtime" value="2013-05-19" />	
+</bean>
+-->
 
-		<property name="memberid" value="spring" />
-		<property name="pw" value="1111" />
-		<property name="phone" value="01021213434" />
-		<property name="email" value="kim@kim.com" />
-		<property name="name" value="김길동" />
-		<property name="regtime" value="2023-05-19" />
-	</bean>
+<!-- 생성자호출 매개변수 전달 -->
+<!-- 
+<bean id="dto3" class="member.MemberDTO" >
+	<constructor-arg name="memberid" value="spring3" />
+	<constructor-arg name="pw" value="3333" />
+</bean>
+-->
 
-	<!-- <bean id="dto2" class="member.MemberDTO">
+<bean id="dao" class="member.MemberDAO"  >
+ <property name="dto" ref="dto" />
+</bean>
 
-		<property name="memberid" value="spring2" />
-		<property name="pw" value="2222" />
-		<property name="phone" value="01072810090" />
-		<property name="email" value="park@hone.com" />
-		<property name="name" value="박길동" />
-		<property name="regtime" value="2013-05-19" />
-	</bean>
-
-	<bean id="dto3" class="member.MemberDTO">
-		<constructor-arg name="memberid" value="spring3" />
-		<constructor-arg name="pw" value="3333" />
-	</bean> -->
-
-	<bean id="dao" class="member.MemberDAO">
-		<property name="dto" ref="dto" />
-	</bean>
 </beans>
+
+
+
+
+
+
+
