@@ -1,4 +1,4 @@
-<%@page import="java.util.ArrayList"%>
+<%@page import="annotation.springmvc.HelloDTO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -8,11 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%  ArrayList<String> list = (ArrayList<String>)request.getAttribute("list"); 
-for(String one : list){
-	out.println("<h1>" + one + "</h1>");
-}
-%>
 
+<% HelloDTO dto = (HelloDTO)request.getAttribute("model"); %>
+<H1><%=dto.getMessage() %></H1>
 </body>
 </html>

@@ -9,7 +9,7 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
-	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- Enables the Spring MVC @Controller programming model. @Requ...  -->
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
@@ -21,8 +21,38 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="edu.multi.first" />
+
+<!-- @Servcie, @Reposiotory, @Component, @Controller +@Autowired,@Qualifier("") -->
+	<context:component-scan base-package="annotation.springmvc" />
 	
-	
-	
+		
+	<!-- 추가 - xml 방식 선언 
+	<beans:bean id="hellocontroller"  class="springmvc.HelloController" />
+	<beans:bean id="listcontroller"  class="springmvc.ListController" />	
+	<beans:bean id="loginform"  class="springmvc.LoginFormController" />	
+	<beans:bean id="loginresult"  class="springmvc.LoginResultController" />	
+		
+	<beans:bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" >
+		<beans:property name="mappings">
+			<beans:props>
+				<beans:prop key="/hello">hellocontroller</beans:prop>
+				<beans:prop key="/list">listcontroller</beans:prop>
+				<beans:prop key="/loginform">loginform</beans:prop>
+				<beans:prop key="/loginresult">loginresult</beans:prop>		
+						
+			</beans:props>
+		</beans:property> 
+	</beans:bean>
+	--> 
 </beans:beans>
+
+
+
+
+
+
+
+
+
+
+
