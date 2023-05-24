@@ -29,7 +29,7 @@
 	<property name="point" value="1000" />
 </bean>
 
-<!--  <context:component-scan base-package="annotation.memberservice" /> -->
+<context:component-scan base-package="annotation.memberservice" /> 
 
  </beans>
 

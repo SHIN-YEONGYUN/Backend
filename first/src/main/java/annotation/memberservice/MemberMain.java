@@ -12,8 +12,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import config.MyConfig;
 
-@Configuration
-@ComponentScan(basePackages = "annotation.memberservice")
+//@Configuration
+//@ComponentScan(basePackages = "annotation.memberservice")
+//현재 사용시 member.xml에서 정의된 MemberDTO BEAN 주입 안되니 테스트하지 말 것
 public class MemberMain {
 
 
@@ -22,14 +23,17 @@ public class MemberMain {
 		ApplicationContext factory = new
 		ClassPathXmlApplicationContext("annotation/memberservice/member.xml");		
 
-        for (String beanName : factory.getBeanDefinitionNames()) {
-            System.out.println(beanName);
-        }
+        //for (String beanName : factory.getBeanDefinitionNames()) {
+        //    System.out.println(beanName);
+        //}
 
-        ApplicationContext membermain =  new AnnotationConfigApplicationContext(MemberMain.class);
-        for (String beanName : membermain.getBeanDefinitionNames()) {
-            System.out.println(beanName);
-        }
+        MemberService service = factory.getBean("janservice", MemberService.class);
+        service.registerMember();
+        
+        //ApplicationContext membermain =  new AnnotationConfigApplicationContext(MemberMain.class);
+        //for (String beanName : membermain.getBeanDefinitionNames()) {
+        //    System.out.println(beanName);
+        //}
         
         //MemberService service = membermain.getBean("janservice", MemberService.class);
         //service.registerMember();

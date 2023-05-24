@@ -1,6 +1,5 @@
 package memberservice;
 
-public interface Memberservice {
-void registerMember();
-
+public interface MemberService {
+	void registerMember();
 }

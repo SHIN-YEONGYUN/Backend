@@ -1,6 +1,6 @@
 package memberservice;
 
-public class MemberBasicService implements Memberservice {
+public class MemberBasicService implements MemberService {
 	MemberDAO dao ;
 
 	public void setDao(MemberDAO dao) {

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class Common {
 	// <aop:pointcut expression="execution (* aop1..*.*(..)) " id="pc"/>
 	@Pointcut("execution (* aop2..*.*(..)) ")
-	public void pc() { }
+	public void pc() { /*@Before+target메소드 변경+@After*/}
 	
 	
 	long starttime = System.currentTimeMillis();

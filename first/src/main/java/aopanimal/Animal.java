@@ -1,5 +1,5 @@
 package aopanimal;
 
 public interface Animal {
-	/* public abstract */ String lunch();
+	/*public abstract*/ String lunch();
 }

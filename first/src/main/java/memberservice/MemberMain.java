@@ -9,7 +9,7 @@ public class MemberMain {
 		ApplicationContext factory = new
 		ClassPathXmlApplicationContext("annotation/memberservice/member.xml");		
 		//memberdao-dto2, pointdao,
-		Memberservice service = factory.getBean("service", Memberservice.class);
+		MemberService service = factory.getBean("service", MemberService.class);
 		service.registerMember();
 	}
 

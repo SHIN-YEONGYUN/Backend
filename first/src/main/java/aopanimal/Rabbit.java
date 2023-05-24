@@ -2,7 +2,7 @@ package aopanimal;
 
 import org.springframework.stereotype.Component;
 
-@Component("rabbit")
+@Component("rab")
 public class Rabbit implements Animal {
 
 	@Override

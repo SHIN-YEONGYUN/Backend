@@ -3,7 +3,8 @@ package annotation.memberservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("basicservice")
+@Service ("basicservice") 
+//@Component 여도 되지만 의미적 구분
 public class MemberBasicService implements MemberService {
 	@Autowired
 	MemberDAO dao ;

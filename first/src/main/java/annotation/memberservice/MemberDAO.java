@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MemberDAO {
 	@Autowired
-	@Qualifier("memberDTO")
+	@Qualifier("dto2")
 	MemberDTO dto ;
 	
 	public void setDto(MemberDTO dto) {
