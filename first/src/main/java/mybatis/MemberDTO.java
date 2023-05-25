@@ -5,13 +5,12 @@ public class MemberDTO {
 	int pw;
 	String phone, email, regtime;
 
-	MemberDTO(String memberid, int pw) {
+	MemberDTO(String memberid, int pw){
 		System.out.println("매개변수 있는 생성자 호출");
 		this.memberid = memberid;
 		this.pw = pw;
 	}
-
-	MemberDTO() {
+	MemberDTO(){
 		System.out.println("MemberDTO 기본 생성자 호출");
 	}
 	
@@ -24,57 +23,46 @@ public class MemberDTO {
 		this.email = email;
 		this.regtime = regtime;
 	}
-
 	public String getMemberid() {
 		return memberid;
 	}
-
 	public void setMemberid(String memberid) {
 		this.memberid = memberid;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public int getPw() {
 		return pw;
 	}
-
 	public void setPw(int pw) {
 		this.pw = pw;
 	}
-
 	public String getPhone() {
 		return phone;
 	}
-
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public String getRegtime() {
 		return regtime;
 	}
-
 	public void setRegtime(String regtime) {
 		this.regtime = regtime;
 	}
-
+	
 	public String toString() {
-		return memberid + ":" + pw + ":" + name + ":" + phone + ":" + email;
+		return memberid+":"+pw+":"+name+":"+phone+":"+email;
 	}
-
+	
+	
 }
