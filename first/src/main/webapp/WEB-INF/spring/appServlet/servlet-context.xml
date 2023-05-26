@@ -12,13 +12,17 @@
 	<!-- Enables the Spring MVC @Controller programming model. @Requ...  -->
 	<annotation-driven />
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- Handles HTTP GET requests for /resources/** 
+	by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<!--  -->
-	
-	<resources mapping="/upload/**" location="file:/Users/shin-yeongyun/Documents/upload/" />
-	<!-- http://localhost8071/first/upload/xxxxx -->
-
+<!-- src/main/webapp/resources/../a.html  저장
+     http://localhost:8071/first/resources/a.html
+     html js css mp3 jpg
+ -->
+  	<resources mapping="/upload/**" location="file:///c:/kdt/upload/" />
+ 	<!-- http://localhost:8071/first/upload/xxxxx    :   맥북  location="file:/kdt/upload/" -->
+ 	
+ 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -27,15 +31,18 @@
 	
 
 <!-- @Servcie, @Reposiotory, @Component, @Controller +@Autowired,@Qualifier("") -->
-	<!-- <context:component-scan base-package="annotation.springmvc" /> -->
-	<context:component-scan base-package="spring.mybatis" />
-	<context:component-scan base-package="upload" />
-	<context:component-scan base-package="ajax" />
-	
-	<!-- request Multipart 타입 해석 -->
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-	
-		
+<!-- 	<context:component-scan base-package="annotation.springmvc" />
+        MemberDAO클래스가 2개의 패키지에 모두 존재하느 오류 발생으로 인하여 주석처리
+        @Repository("dao")처럼 이름 지정시 오류 없음
+ -->
+ <!-- <context:component-scan base-package="spring.mybatis" />	-->
+<!--  <context:component-scan base-package="upload" />
+	<context:component-scan base-package="ajax" /> -->
+	<context:component-scan base-package="board.spring.mybatis" />
+
+			
+	<!-- request mULTIPART타입 해석	 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />	
 	<!-- 추가 - xml 방식 선언 
 	<beans:bean id="hellocontroller"  class="springmvc.HelloController" />
 	<beans:bean id="listcontroller"  class="springmvc.ListController" />	
